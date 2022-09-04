@@ -30,9 +30,14 @@ function añadir() {
     }
     document.getElementById("contenedor").innerHTML = filas
 }
-// final de la funcion añadir //
 
-document.addEventListener("DOMContentLoaded", () => {
+// funcion que limpia los datos de contenedor//
+function limpia() {
+    archivo = []
+    guardar();
+    añadir();
+}
+    document.addEventListener("DOMContentLoaded", () => {
     mostrar();
     añadir();
     document.getElementById("agregar").addEventListener("click", () => {
@@ -40,21 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(archivo)
     })
 
-}
-)
-// funcion que limpia los datos de contenedor//
-function limpia() {
-
-    archivo = []
-    guardar();
-    añadir();
-
-
-
-}
-document.addEventListener("DOMContentLoaded", () => {
-
-    let botoncito = document.getElementById("limpiar").addEventListener("click", () => {
+    document.getElementById("limpiar").addEventListener("click", () => {
         limpia();
     })
 })
